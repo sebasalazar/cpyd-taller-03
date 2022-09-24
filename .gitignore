@@ -32,3 +32,4 @@
 *.app
 /app/build/
 /app/dist/
+/app/nbproject/
