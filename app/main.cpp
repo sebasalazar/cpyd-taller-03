@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include "Trx.h"
 #include "Utem.h"
+#include "DBService.h"
 
 
 /**
@@ -34,6 +35,8 @@ int main(int argc, char** argv) {
         double amex = 0;
         double diners = 0;
 
+        DBService servicio;
+
         while (std::getline(archivo, linea)) {
             Trx trx(linea);
 
@@ -52,6 +55,8 @@ int main(int argc, char** argv) {
             if (trx.isDiners()) {
                 diners += trx.GetComision(DINERS_FEE);
             }
+
+            servicio.GuardarTrx(trx);
         }
 
         std::cout << std::endl; // salto de línea

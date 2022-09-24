@@ -58,6 +58,12 @@ public:
      * @param fecha estructura de fecha
      */
     void SetFecha(std::tm fecha);
+    /**
+     * 
+     * @param fecha String que representa la fecha
+     * @param formato formato a procesar
+     */
+    void SetFecha(std::string fecha, std::string formato);
 
     /**
      * 

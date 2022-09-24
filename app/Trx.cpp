@@ -61,6 +61,14 @@ void Trx::SetFecha(std::tm fecha) {
     this->fecha = fecha;
 }
 
+void Trx::SetFecha(std::string fecha, std::string formato) {
+    std::istringstream ss(fecha);
+    ss >> std::get_time(&(this->fecha), formato.c_str());
+    if (ss.fail()) {
+        std::cerr << "Fallo en el parseo de la fecha (" << fecha << ")" << std::endl;
+    }
+}
+
 long Trx::GetMonto() const {
     return monto;
 }
